@@ -61,7 +61,7 @@ function stripAnsi(string) {
   return string.replace(ansiRegex(), "");
 }
 
-// node_modules/is-fullwidth-code-point/index.js
+// node_modules/string-width/node_modules/is-fullwidth-code-point/index.js
 function isFullwidthCodePoint(codePoint) {
   if (!Number.isInteger(codePoint)) {
     return false;

@@ -381,7 +381,9 @@
         "yamafaktory",
         "Yatharth",
         "Zatorski",
-        "Zosel"
+        "Zosel",
+        "Xaviw",
+        "miniprogram"
     ],
     "ignoreRegExpList": [
         "<!-- prettier-ignore -->\\n(`{3,})\\w*\\n[\\s\\S]+?\\1",

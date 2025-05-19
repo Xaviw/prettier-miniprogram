@@ -1,12 +1,10 @@
 {
-  "name": "prettier",
+  "name": "prettier-miniprogram",
   "version": "2.8.8",
-  "description": "Prettier is an opinionated code formatter",
+  "description": "适配小程序以及微信开发者工具的 prettier",
   "bin": "./bin/prettier.js",
-  "repository": "prettier/prettier",
-  "funding": "https://github.com/prettier/prettier?sponsor=1",
-  "homepage": "https://prettier.io",
-  "author": "James Long",
+  "repository": "Xaviw/prettier-miniprogram",
+  "author": "Xavi",
   "license": "MIT",
   "main": "./index.js",
   "browser": "./standalone.js",
@@ -142,29 +140,16 @@
   },
   "scripts": {
     "prepublishOnly": "echo \"Error: must publish from dist/\" && exit 1",
-    "test": "jest",
-    "test:dev-package": "cross-env INSTALL_PACKAGE=1 jest",
-    "test:dist": "cross-env NODE_ENV=production jest",
-    "test:dist-standalone": "cross-env NODE_ENV=production TEST_STANDALONE=1 jest",
-    "test:integration": "jest tests/integration",
-    "test:dist-lint": "eslint --no-eslintrc --no-ignore --no-inline-config --config=./scripts/bundle-eslint-config.cjs \"dist/**/*.{js,mjs}\"",
-    "perf": "yarn && yarn build && cross-env NODE_ENV=production node ./dist/bin-prettier.js",
-    "perf:inspect": "yarn && yarn build && cross-env NODE_ENV=production node --inspect-brk ./dist/bin-prettier.js",
-    "perf:benchmark": "yarn perf --debug-benchmark",
-    "perf:compare": "./scripts/benchmark/compare.sh",
     "lint": "run-p lint:*",
     "lint:typecheck": "tsc",
     "lint:eslint": "cross-env EFF_NO_LINK_RULES=true eslint . --format friendly",
-    "lint:changelog": "node ./scripts/lint-changelog.mjs",
     "lint:prettier": "prettier . \"!test*\" --check",
     "lint:spellcheck": "cspell --no-progress --relative --dot --gitignore",
     "lint:deps": "node ./scripts/check-deps.mjs",
-    "lint:actionlint": "node-actionlint",
     "fix": "run-s fix:eslint fix:prettier",
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:prettier": "yarn lint:prettier --write",
     "build": "node ./scripts/build/build.mjs",
-    "build:website": "node ./scripts/build-website.mjs",
     "vendors:bundle": "node ./scripts/vendors/bundle-vendors.mjs"
   },
   "browserslist": [
@@ -172,5 +157,6 @@
     "not ie 11",
     "not safari 5.1",
     "not op_mini all"
-  ]
+  ],
+  "packageManager": "yarn@4.9.1"
 }
